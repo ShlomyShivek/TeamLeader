@@ -1,5 +1,14 @@
 define([], function(){
     return{
+
+        login:function(credentials, http, onSuccess, onFailure){
+            http.post('http://127.0.0.1:8081/api/login', angular.toJson(credentials))
+                .success(onSuccess)
+                .error(onFailure);
+
+        },
+
+
         getTestDataFromServer: function(http, onSuccess, onFailure){
             http.get('http://127.0.0.1:8081/api').
                 success(function(data, status, headers, config) {
