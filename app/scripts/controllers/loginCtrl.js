@@ -1,14 +1,15 @@
-define(['../app', '../services/nodeService', '../models/authenticationModel'],function(myApp, serviceClient, authenticationModel){
-    myApp.controller('LoginCtrl',['$scope','$http',function controller($scope, $http){
+define(['../app', '../services/nodeService', '../models/authenticationModel'],function(myApp, nodeService, authenticationModel){
+    myApp.controller('LoginCtrl',['$scope','$http', '$location', '$rootScope',function controller($scope, $http, $location, $rootScope){
         $scope.login=function(){
 
             var userCredentials=new authenticationModel.credentialsModel();
             userCredentials.username=$scope.userName;
             userCredentials.password=$scope.password;
 
-            serviceClient.login(userCredentials, $http,
+            nodeService.login(userCredentials, $http,
                 function(data){//on success
-                    alert(data.message);
+                    nodeService.setToken($http, data.token);
+                    $location.path('/dashboard');
                 },
                 function(data){//on failure
                     alert(data);

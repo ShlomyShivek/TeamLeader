@@ -1,15 +1,19 @@
 define([
         'app',
+        'controllers/dashboardCtrl',
         'controllers/helloWorldCtrl',
         'controllers/loginCtrl',
+        'controllers/addNewProjectCtrl',
         'controllers/readmeCtrl',
         'controllers/homeCtrl'
-     /* ,'{pathToControllerFile}' */],
+     ],
     function (mainApp) {
 
         return mainApp.config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/home', { controller: 'HomeCtrl', templateUrl: '/templates/home.html' });
             $routeProvider.when('/login', { controller: 'LoginCtrl', templateUrl: '/templates/login.html' });
+            $routeProvider.when('/dashboard', { controller: 'DashboardCtrl', templateUrl: '/templates/dashboard.html' });
+            $routeProvider.when('/addproject', { controller: 'AddNewProjectCtrl', templateUrl: '/templates/addNewProject.html' });
 
 
             $routeProvider.when('/helloWorld', { controller: 'HelloWorldCtrl', templateUrl: '/templates/helloWorld.html' });
