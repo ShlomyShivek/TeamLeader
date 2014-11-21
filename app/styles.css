@@ -2,3 +2,7 @@
     float: none;
     margin: 0 auto;
 }
+
+.table-hover tbody tr:hover > td {
+    cursor: pointer
+}
