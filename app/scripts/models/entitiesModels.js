@@ -5,6 +5,8 @@ define([],function(){
             var workingDays;
             var startDate;
             var finishDate;
+            var totalDevDays;
+            var availableDevDays;
         }
     }
 })

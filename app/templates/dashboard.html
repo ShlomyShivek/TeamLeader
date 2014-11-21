@@ -2,6 +2,27 @@
     this is the dashboard page
 </div>
 <div>
+
+    <div class="col-lg-6 col-centered">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Project Name</th>
+                <th>Working Days</th>
+                <th>Start Date</th>
+                <th>Finish Date</th>
+                <th>Total Dev. Days</th>
+                <th>Available Dev. Days</th>
+            </tr>
+            <tr ng-repeat="project in projects">
+                <td>{{project.projectName}}</td>
+                <td>{{project.workingDays}}</td>
+                <td>{{project.startDate}}</td>
+                <td>{{project.finishDate}}</td>
+                <td>{{project.totalDevDays}}</td>
+                <td>{{project.availableDevDays}}</td>
+            </tr>
+        </table>
+    </div>
     <a href='index.html#home'>logout</a>
     <a href='index.html#addproject'>add new project</a>
 </div>

@@ -1,0 +1,3 @@
+exports.getUser=function(sessionToken){
+
+}

@@ -1,22 +1,35 @@
-define(['../app', '../services/nodeService'],function(myApp, serviceClient){
+define(['../app', '../services/nodeService','../models/entitiesModels'],function(myApp, nodeService, entitiesModels){
     myApp.controller('DashboardCtrl',['$scope','$http',function controller($scope, $http){
 
-        /*
-         $scope.helloMsg="Hello World!!!";
+        function initProjects(){
 
-         $scope.TestService=function(){
-         serviceClient.getTestDataFromServer($http,onSuccessGetDataFromNodeServer,onFailureGetDataFromNodeServer);
-         }
+            /*
+            var mockProjects=new Array();
+            for(var i=0;i<10;i++) {
+                var project = new entitiesModels.projectModel();
+                project.projectName = "Proj"+i;
+                project.finishDate = "01/01/2010";
+                project.startDate = "01/01/2000";
+                project.workingDays = 20;
+                project.totalDevDays = 2000;
+                project.availableDevDays = 20;
+                mockProjects.push(project);
+            }
+            $scope.projects = mockProjects;
+            */
 
-         function onSuccessGetDataFromNodeServer(data){
-         $scope.serviceOutput=data;
-         }
+            nodeService.getProjects($http,
+                function(data){
+                    //success
+                    $scope.projects = data;
+                },
+                function (data) {
+                    //failure
+                })
 
-         function onFailureGetDataFromNodeServer(data){
-         $scope.serviceOutput=data;
-         }
-         */
+        }
 
+        initProjects();
     }])
 })
 

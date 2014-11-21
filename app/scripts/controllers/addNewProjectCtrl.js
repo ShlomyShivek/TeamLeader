@@ -10,16 +10,17 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         }
 
         $scope.saveProject=function(){
-            $scope.$apply(); //need to call apply since the project start and end dates were updated from the datepicker control and not from angular
-            var projectModel = new entitiesModels.projectModel();
-            projectModel.projectName = $scope.projectName;
-            projectModel.workingDays = $scope.workingDays;
-            projectModel.startDate = $scope.projectStart;
-            projectModel.finishDate = $scope.projectEnds;
+            //on success
+                    $scope.$apply(); //need to call apply since the project start and end dates were updated from the datepicker control and not from angular
+                    var projectModel = new entitiesModels.projectModel();
+                    projectModel.projectName = $scope.projectName;
+                    projectModel.workingDays = $scope.workingDays;
+                    projectModel.startDate = $scope.projectStart;
+                    projectModel.finishDate = $scope.projectEnds;
 
-            nodeService.addNewProject($http, projectModel, function () {
-                //on success
-                    alert('new project added');
+                    nodeService.addNewProject($http, projectModel, function () {
+
+                    $location.path('/dashboard');
             }, function(){
                 //on failure
                     alert('failed to add project');

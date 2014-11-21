@@ -30,6 +30,13 @@ define(['angular'], function(angular){
             http.post(rootUrl+'/api/projects', angular.toJson(project))
                 .success(onSuccess)
                 .error(onFailure);
+        },
+
+        getProjects:function(http, onSuccess, onFailure){
+            http.get(rootUrl+'/api/projects')
+                .success(onSuccess)
+                .error(onFailure);
+
         }
     }
 })
