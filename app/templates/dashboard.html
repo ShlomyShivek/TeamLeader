@@ -18,8 +18,8 @@
                 <td><img src="/images/trash.ico" style="width: 20px; height: 20px" data-toggle="modal" data-target="#myModal" data-whatever={{project.projectName}}/></td>
                 <td>{{project.projectName}}</td>
                 <td>{{project.workingDays}}</td>
-                <td>{{project.startDate}}</td>
-                <td>{{project.finishDate}}</td>
+                <td>{{project.startDate.toLocaleDateString()}}</td>
+                <td>{{project.finishDate.toLocaleDateString()}}</td>
                 <td>{{project.totalDevDays}}</td>
                 <td>{{project.availableDevDays}}</td>
             </tr>
@@ -39,7 +39,7 @@
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    The project and all its content will be deleted. Are you really sure about it???
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

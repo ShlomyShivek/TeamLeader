@@ -1,3 +1,6 @@
+//db.projects.ensureIndex({"projectName":1},{unique:true, sparse:true})
+
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 

@@ -17,10 +17,19 @@ exports.getProjects=function(user, callback){
 
 }
 
-exports.addProject= function (project, user) {
+exports.addProject= function (project, user, onSuccess, onFailure) {
+    if((project.projectName==null)||(project.projectName.trim()=='')){
+        onFailure(100); //missing project name
+    }
     project.save(function (err, model) {
-        if (err) return console.error(err);
-        console.log('New data entered to DB:' + project.toString());
+        if (err) {
+            onFailure();
+        }
+        else{
+            console.log('New data entered to DB:' + project.toString());
+            onSuccess();
+        }
+
     });
 }
 

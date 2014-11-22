@@ -23,11 +23,13 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 projectModel.finishDate = endDate;
 
                 nodeService.addNewProject($http, projectModel, function () {
-
-                $location.path('/dashboard');
-            }, function(){
-                //on failure
-                    alert('failed to add project');
+                //success
+                    $location.path('/dashboard');
+            }, function(data) {
+                    //on failure
+                    if (data.err == 100) {
+                        alert('project name missing');
+                    }
                 }
             );
         };

@@ -5,6 +5,11 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             nodeService.getProjects($http,
                 function(data){
                     //success
+                    data.forEach(function(project) {
+                        project.startDate=new Date(project.startDate);
+                        project.finishDate=new Date(project.finishDate);
+                    });
+
                     $scope.projects = data;
                 },
                 function (data) {

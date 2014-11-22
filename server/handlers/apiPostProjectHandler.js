@@ -16,9 +16,13 @@ exports.handleRequest=function(req, res){
     var projectsModel = require('../dbModelsInitiator').getDbModel('project');
     var project=new projectsModel(req.body);
 
-    projectsService.addProject(project,user);
-
-    console.log(req.body);
-
-    res.json({ message: 'new project added' });
+    projectsService.addProject(project,user,function(data){
+        //Success
+        res.json({ message: 'new project added' });
+    }, function(data){
+        //failure
+        if(data==100){
+            res.status(400).json({err:100,message:'project name missing'});
+        }
+    });
 }
