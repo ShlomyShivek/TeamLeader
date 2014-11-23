@@ -42,6 +42,18 @@ define(['angular'], function(angular){
             http.delete(rootUrl+'/api/projects/' + projectNameToDelete)
                 .success(onSuccess)
                 .error(onFailure);
+        },
+
+        getTeams: function(http,onSuccess, onFailure){
+            http.get(rootUrl+'/api/teams/')
+                .success(onSuccess)
+                .error(onFailure);
+        },
+
+        getTeamMembers: function(http, teamName, onSuccess, onFailure){
+            http.get(rootUrl+'/api/teams/' + teamName)
+                .success(onSuccess)
+                .error(onFailure);
         }
     }
 })

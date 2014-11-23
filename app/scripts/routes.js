@@ -1,6 +1,7 @@
 define([
         'app',
         'controllers/dashboardCtrl',
+        'controllers/teamsEditorCtrl',
         'controllers/helloWorldCtrl',
         'controllers/loginCtrl',
         'controllers/addNewProjectCtrl',
@@ -14,6 +15,7 @@ define([
             $routeProvider.when('/login', { controller: 'LoginCtrl', templateUrl: '/templates/login.html' });
             $routeProvider.when('/dashboard', { controller: 'DashboardCtrl', templateUrl: '/templates/dashboard.html' });
             $routeProvider.when('/addproject', { controller: 'AddNewProjectCtrl', templateUrl: '/templates/addNewProject.html' });
+            $routeProvider.when('/teams', { controller: 'TeamsEditorCtrl', templateUrl: '/templates/teamsEditor.html' });
 
 
             $routeProvider.when('/helloWorld', { controller: 'HelloWorldCtrl', templateUrl: '/templates/helloWorld.html' });

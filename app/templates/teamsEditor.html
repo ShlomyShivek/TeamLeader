@@ -1,0 +1,77 @@
+<div>
+    <a href='index.html#dashboard'>back to dashboard</a>
+</div>
+
+<div class="section col-lg-10 col-centered">
+
+    <div class="page-header"><h1>Teams Editor</h1></div>
+    <p>Use this page to manage your teams</p>
+
+    <form role="form" class="col-lg-10 col-left" >
+        <div class="form-group col-lg-4">
+
+            <div>
+                <select ng-model="selectedTeam" ng-options="team.teamName for team in teams">
+                    <option value="">-- choose team --</option>
+                </select>
+            </div>
+
+            <div ng-show="selectedTeam!=null"> <!-- display the selected team details -->
+
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <td><h2>{{selectedTeam.teamName}}</h2></td>
+                    </tr>
+                    <tr ng-repeat="member in membersOfSelectedTeam" ng-click="teamMemberSelected(member)">
+                        <td><b ng-show="member.isLeader==true">Team leader:</b> {{member.name}}</td>
+                    </tr>
+                </table>
+                <div>
+                    click on each team member for more options
+                </div>
+
+
+                <div ng-show="selectedTeamMember!=null">
+                    <div>
+                        More options for {{selectedTeamMember.name}}:
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+
+
+                <input type="button" data-toggle="modal" data-target="#addNewMember" value="Add new member to this team"/>
+
+            </div>
+
+            <!-- modal for creating new developer -->
+            <div class="modal fade" id="addNewMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Add new team member</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                This will create new developer in the system database and will automatically add him to the team.
+                                Make sure this developer doesn't already exists before adding him.
+                            </div>
+                            <div>
+                                Developer name: <input type="text" id="newDeveloperName" ng-model="newDeveloperName">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="submitNewDeveloper">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
