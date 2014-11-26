@@ -1,0 +1,120 @@
+<div>
+    <a href='index.html#dashboard'>back to dashboard</a>
+</div>
+
+<div class="section col-lg-10 col-centered">
+
+    <div class="page-header"><h1>Teams Management</h1></div>
+    <p>Manage your teams and members...</p>
+
+
+
+
+    <form role="form" class="col-lg-10 col-centered" >
+
+        <!-- select team -->
+        <div>
+            <button type="button" class="btn btn-info btn-lg" style="margin: 1%"
+                    ng-repeat-start="team in teams" ng-repeat-end ng-click="teamSelected(team);">{{team.teamName}}</button>
+            <button type="button" class="btn btn-info btn-lg" style="margin: 1%"
+                    data-toggle="modal" data-target="#addNewTeam"> <b>+</b>
+            </button>
+
+        </div>
+
+
+
+
+            <!-- display the selected team details -->
+            <div ng-show="selectedTeam!=null">
+
+                <h2>Manage Your {{selectedTeam.teamName}} Team</h2>
+                <button type="button" class="btn btn-primary" memberId="{{selectedTeamLeader.id}}"
+                        ng-click="teamMemberSelected(selectedTeamLeader);">{{selectedTeamLeader.name}}</button>
+
+                <div>
+                    <button type="button" class="btn btn-success" style="margin: 1%"
+                            ng-click="teamMemberSelected(member);" memberId="{{member.id}}"
+                            ng-repeat-start="member in selectedTeamMembers" ng-repeat-end>{{member.name}}</button>
+                    <button type="button" class="btn btn-success" style="margin: 1%"
+                            data-toggle="modal" data-target="#addNewMember"> <b>+</b>
+                    </button>
+                </div>
+
+                <div ng-show="selectedTeamMember!=null">
+                    <div>
+                        Click this member again for releasing...
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            remove {{selectedTeamMember.name}} from this team
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            set {{selectedTeamMember.name}} as leader
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- modal for creating new developer -->
+            <div class="modal fade" id="addNewMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Add new or existing developer</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div id="the-basics">
+                                    <input class="typeahead" type="text" id="newDeveloperName" placeholder="Full name...">
+                                    <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Arial; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                    <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-states"></div></span>
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="submitNewDeveloper">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- modal for creating new team -->
+        <div class="modal fade" id="addNewTeam" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">Create new team</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <input type="text" class="form-control" id="newTeamName" placeholder="Team name..." ng-model="newTeamName">
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="submitNewTeam">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+

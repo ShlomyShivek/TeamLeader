@@ -10,7 +10,11 @@ var authenticationService=require('../services/authenticationService');
 
 exports.handleRequest=function(req, res){
     res.json({teams:[
-        {teamName:'Database'}
+        {teamName:'Database'},
+        {teamName:'Server'},
+        {teamName:'Web'},
+        {teamName:'Client'},
+        {teamName:'Design'}
         ]});
 /*
     var sessionToken = req.header('Authentication');

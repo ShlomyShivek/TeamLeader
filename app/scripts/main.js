@@ -11,7 +11,8 @@ require.config({
         angular: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min',
         ngRoute: 'http://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-route.min',
         bootstrap: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min',
-        datepicker: 'lib/datepicker/js/bootstrap-datepicker'
+        datepicker: 'lib/datepicker/js/bootstrap-datepicker',
+        typeahead: 'lib/typeahead/dist/typeahead.jquery.min'
     },
     shim:{
         'angular':{
@@ -21,7 +22,8 @@ require.config({
         'jqueryUI': ['jquery'],
         'jwizard': ['jqueryUI'],
         'bootstrap': ['jquery'], //states that bootstrap depends on first loading the jQuery
-        'datepicker':['jquery']
+        'datepicker':['jquery'],
+        'typeahead':['jquery']
     },
     priority:[
         'angular'
@@ -37,7 +39,8 @@ require([
     'jquery',
     'routes',
     'bootstrap',
-    'datepicker'
+    'datepicker',
+    'typeahead'
 ], function (angular) {
     //This function will be called when all the dependencies
     //listed above are loaded. Note that this function could

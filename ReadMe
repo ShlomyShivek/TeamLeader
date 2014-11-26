@@ -11,6 +11,7 @@ The template uses the following open source free components:
     7. mongoose - http://mongoosejs.com/
     8. bootstrap-datepicker - http://bootstrap-datepicker.readthedocs.org/en/release/
     9. Glyphicons - http://glyphicons.com/
+    10. typeahead.js - http://twitter.github.io/typeahead.js/
 
 Credit: this template was built with the inspiration of
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
