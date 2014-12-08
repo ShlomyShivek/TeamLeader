@@ -1,4 +1,4 @@
-//db.projects.ensureIndex({"projectName":1},{unique:true, sparse:true})
+//db.teams.ensureIndex({"name":1},{unique:true, sparse:true})
 
 
 var mongoose = require('mongoose');
@@ -13,15 +13,9 @@ function registerModel(schema) {
 
 
 module.exports = function() {
-    var project = new Schema({
+    var team = new Schema({
         name         : String
-        , workingDays       : Number
-        , startDate         : Date
-        , finishDate        : Date
-        , totalDevDays      : Number
-        , availableDevDays  : Number
-
     });
-    registerModel(project);
+    registerModel(team);
 };
 

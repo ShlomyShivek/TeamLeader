@@ -56,13 +56,20 @@ define(['angular'], function(angular){
                 .error(onFailure);
         },
 
-        searchDevelopers: function(http, searchPatterns, onSuccess, onFailure){
-            /*
-            http.get(rootUrl+'/api/developers/' + searchPatterns)
+        addNewTeam: function(http, teamName, onSuccess, onFailure) {
+            http.post(rootUrl + '/api/teams/', angular.toJson(teamName))
                 .success(onSuccess)
                 .error(onFailure);
-            */
+        },
 
+
+        searchEmployees: function(http, searchPatterns, onSuccess, onFailure){
+            http.get(rootUrl+'/api/employees/' + searchPatterns)
+                .success(onSuccess)
+                .error(onFailure);
+
+
+            /*
             var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
                 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
                 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -75,6 +82,13 @@ define(['angular'], function(angular){
             ];
 
             onSuccess(states);
+            */
+        },
+
+        addNewEmployee: function(http, employee, onSuccess, onFailure){
+            http.post(rootUrl+'/api/employees/',angular.toJson(employee))
+                .success(onSuccess)
+                .error(onFailure);
         }
 
     }

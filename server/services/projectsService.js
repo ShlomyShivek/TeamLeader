@@ -18,7 +18,7 @@ exports.getProjects=function(user, callback){
 }
 
 exports.addProject= function (project, user, onSuccess, onFailure) {
-    if((project.projectName==null)||(project.projectName.trim()=='')){
+    if((project==null)||(project.projectName==null)||(project.projectName.trim()=='')){
         onFailure(100); //missing project name
     }
     project.save(function (err, model) {

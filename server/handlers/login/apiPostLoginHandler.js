@@ -1,15 +1,14 @@
 //the url path to be used for this handler
-exports.path='/readme';
+exports.path='/login';
 
 //the http verb to be used for this handler
-exports.verb='GET';
+exports.verb='POST';
 
-//handler business logic
 exports.handleRequest=function(req, res){
 
     console.log('handling ' + JSON.stringify(req.route.methods) + ' ' + req.originalUrl + ' from:' + req.header('referer'));
 
-    var fs = require('fs');
-    var fileContent = fs.readFileSync('..\\ReadMe', 'utf8');
-    res.json({ message: fileContent });
+
+    console.log(req.body.username);
+    res.json({ message: 'You just logged in....', token:'adfafadf' });
 }

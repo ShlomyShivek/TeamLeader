@@ -4,6 +4,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         $scope.selectedTeam = null;
         $scope.selectedTeamMember=null;
         $scope.selectedTeamMembers=null;
+        $scope.addNewTeamError=null;
 
         //team selected
         $scope.teamSelected= function (team) {
@@ -13,7 +14,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
 
 
         function teamSelected() {
-            nodeService.getTeamMembers($http, $scope.selectedTeam.teamName, function (data) {
+            nodeService.getTeamMembers($http, $scope.selectedTeam.name, function (data) {
                 //success
                 $scope.selectedTeamMembers=new Array();
                 data.members.forEach(function (member) {
@@ -30,24 +31,6 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 alert('could not get team members');
             });
         }
-
-        $scope.newDeveloperName=null;
-
-        $scope.$watch('newDeveloperName', function (newValue, oldValue) {
-            //alert($('#newDeveloperName').val);
-            //$('#newDeveloperName').Typeahead('["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]');
-/*
-            if(newValue.trim()!='') {
-                nodeService.searchDevelopersOnServer($http, newValue, function (data) {
-                        //success
-                    },
-                    function (data) {
-                        //failure
-                    });
-            }
-            */
-        })
-
 
         //team member selected
         $scope.teamMemberSelected=function(member){
@@ -78,6 +61,30 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         }
 
 
+        //init events for the "Add New Team" dialog
+        function initAddNewTeamDialog(){
+            $scope.addNewTeamError="";
+            $('#submitNewTeam').click(function () {
+                var teamModel = new entitiesModels.teamModel();
+                teamModel.name = $scope.newTeamName;
+
+
+               nodeService.addNewTeam($http, teamModel, function(data){
+                   //Success
+                   $('#addNewTeam').modal('hide');
+                   $('#newTeamName').val('');
+                   initTeams();
+               }, function(data){
+                   //Failure
+                   if(data.err==101){
+                       //team name already exists
+                       $scope.addNewTeamError = "Team name already exists";
+                   }
+               })
+            });
+        }
+        initAddNewTeamDialog();
+
         //init events for the "Add New Member" dialog
         function initAddNewMemberDialog(){
 
@@ -106,7 +113,25 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                     //falure
                 });
                 */
+
+                var employeeModel = new entitiesModels.employeeModel();
+                employeeModel.employeeName = $('#newDeveloperName').val();
+
+                nodeService.addNewEmployee($http,employeeModel,function(data){
+                    //Success
+                    alert('success');
+                }, function(data){
+                    //Error
+                    alert(data.err);
+                    alert(data.msg);
+                });
+
                 alert('submitting new developer named:' + $('#newDeveloperName').val() + ' for team:' + $scope.selectedTeam.teamName);
+
+                //check if this is a new or existing employee
+                //if new employee - create a new employee first and then add it to the team
+                //otherwise just add it to the team
+
                 $('#addNewMember').modal('hide');
                 $('#newDeveloperName').val('');
 
@@ -120,7 +145,10 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         function initTeams(){
             nodeService.getTeams($http, function(data){
                 //onSuccess
-                $scope.teams = data.teams;
+                //$scope.teams=new Array();
+                //data.teams.forea
+                //var team = new entitiesModels.teamModel();
+                $scope.teams = data;
             }, function(data){
                 //onFailure
             });
@@ -134,7 +162,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
 
 
                 if((q!=null) && (q.trim()!='')) {
-                    nodeService.searchDevelopers($http, q, function (data) {
+                    nodeService.searchEmployees($http, q, function (data) {
                             //success
                             strs=data;
 

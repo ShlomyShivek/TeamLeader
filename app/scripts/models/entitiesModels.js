@@ -7,6 +7,15 @@ define([],function(){
             var finishDate;
             var totalDevDays;
             var availableDevDays;
+        },
+
+        teamModel:function(){
+            var name;
+        },
+
+        employeeModel:function(){
+            var employeeName;
+            var defaultWorkingPercentage;
         }
     }
 })
