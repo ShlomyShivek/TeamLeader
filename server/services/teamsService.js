@@ -69,68 +69,99 @@ exports.addEmployee=function(user,employee,onSuccess, onFailure){
 }
 
 //search for employees
-exports.searchEmployees= function(user,searchPattern,onSuccess,onFailure){
-    employeeModel.find(function(err,employees){
-        if(err) {
+function searchEmployees(searchPattern, onFailure, onSuccess) {
+    console.log('searching for employee:' + searchPattern);
+    employeeModel.find(function (err, employees) {
+        if (err) {
             console.log('failed to search for employees in DB:' + err);
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
         }
         else {
             var result = new Array();
+            console.log('employee search result:' + employees);
+            /*
             employees.forEach(function (employeeEntry) {
                 var employee = new employeeModel(employeeEntry);
                 result.push(employee);
+
             });
             onSuccess(result);
+            */
+            onSuccess(employees);
         }
     })
 }
+exports.searchEmployees= function(user,searchPattern,onSuccess,onFailure){
+    searchEmployees(searchPattern, onFailure, onSuccess);
+}
 
 //add employee to team
-exports.addEmployeeToTeam=function(user,employee,team,onSuccess, onFailure){
+exports.addEmployeeToTeam=function(user,employeeName,teamName,onSuccess, onFailure) {
     //get the employee details from the database
-    employee.findOne(function (err, dbEmployee) {
-        if(err){
-            onFailure();
-        }
-        else{
-            if(employee.teamIds.indexOf(team._id)!=-1){
-                onFailure(errorCodes.ServicesErrorCodes.ItemAlreadyExists);
-            }else{
-                employee.teamIds.push(team._id);
-                employee.update(function(err,model){
-                    if(err){
-                        onFailure(errorCodes.ServicesErrorCodes.UnknownError);
-                    }
-                    else{
-                        onSuccess();
+
+
+    searchEmployees(user,employeeName,function(data){
+       //success
+        if((data!=null)&&(data.length==1)) {
+            var dbEmployee = data[0];
+            if (dbEmployee.teams == null) {
+                dbEmployee.teams = new Array();
+            }
+
+            //find the team from the database
+            getTeamByName(user, teamName, function(data){
+                //team found
+                var dbTeam=data;
+
+                var employeeAlreadyMemberOfTheTeam=false;
+
+
+                dbEmployee.teams.forEach(function(teamOfEmployee){
+                    if(teamOfEmployee.id.toString()==dbTeam._id.toString()){
+                        //employee is already member of this team
+                        employeeAlreadyMemberOfTheTeam=true;
                     }
                 });
-            }
-        }
-    },{id:employee._id});
 
-    employee.teamIds.push(team._id);
-    employee.update(function(err,model){
-        if(err){
-            onFailure(errorCodes.ServicesErrorCodes.UnknownError);
-        }
-        else{
-            onSuccess();
+                if(employeeAlreadyMemberOfTheTeam){
+                    console.log('employee is already member of this team');
+                    onFailure(errorCodes.ServicesErrorCodes.ItemAlreadyExists);
+                }
+                else{
+                    dbEmployee.teams.push({id:data._id,role:1});
+                    console.log('updating employee in database:'+dbEmployee);
+                    dbEmployee.save(function(err){
+                        if (err) {
+                            console.log('failed to update employee as new team member:' + err);
+                            onFailure(errorCodes.ServicesErrorCodes.UnknownError);
+                        }
+                        else {
+                            console.log('employee was updated as a new team member');
+                            onSuccess();
+                        }
+                    });
+                }
+            },onFailure);
+        }else{
+            onFailure(errorCodes.ServicesErrorCodes.UNKNOWN_ERR);
         }
 
-    })
+    }, onFailure);
 }
 
 //get team from the database by team name
 function getTeamByName(user, teamName, onSuccess, onFailure){
-    teamModel.findOne(function(err,dbTeam){
+    //var tm = require('../dbModelsInitiator').getDbModel('team');
+    console.log('searching for team by name:'+teamName);
+    var query=teamModel.where('name', teamName);
+    query.findOne(function(err,dbTeam){
         if(err){
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
         }else{
+            console.log('found team:'+dbTeam);
             onSuccess(dbTeam);
         }
-    },{name:teamName});
+    });
 }
 
 //get from the database all employees that belongs to specific team id

@@ -16,16 +16,18 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         function teamSelected() {
             nodeService.getTeamMembers($http, $scope.selectedTeam.name, function (data) {
                 //success
-                $scope.selectedTeamMembers=new Array();
-                data.members.forEach(function (member) {
-                    if(member.id == data.leaderId){
-                        $scope.selectedTeamLeader=member;
-                    }
-                    else{
-                      $scope.selectedTeamMembers.push(member);
-                    }
+                if((data!=null)&&(data.members!=null)) {
+                    $scope.selectedTeamMembers = new Array();
+                    data.members.forEach(function (member) {
+                        if (member.id == data.leaderId) {
+                            $scope.selectedTeamLeader = member;
+                        }
+                        else {
+                            $scope.selectedTeamMembers.push(member);
+                        }
 
-                });
+                    });
+                }
             }, function () {
                 //failure
                 alert('could not get team members');
@@ -60,6 +62,10 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             }
         }
 
+        $scope.suggestedEmployeeSelected= function () {
+            alert('suggestedEmployeeSelected');
+        }
+
 
         //init events for the "Add New Team" dialog
         function initAddNewTeamDialog(){
@@ -87,59 +93,57 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
 
         //init events for the "Add New Member" dialog
         function initAddNewMemberDialog(){
-
-
-            //$('#addNewMember').on('show.bs.modal', function (event) {
-                //var button = $(event.relatedTarget) // Button that triggered the modal
-                //var projectName = button.data('whatever'); // Extract info from data-* attributes
-                //projectName=projectName.substring(0, projectName.length-1); //remove the extra '/' that comes from somewhere
-                //$scope.selectedProjectForDelete=projectName;
-                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                //var modal = $(this)
-                //modal.find('.modal-title').text('Deleting project ' + projectName)
-                //modal.find('.modal-body input').val(projectName)
-            //})
-
-
-            //jQuery to the rescue........
             $('#submitNewDeveloper').click(function(){
-                /*
-                nodeService.deleteProject($http,$scope.selectedProjectForDelete,function(){
-                    //success
-                    //refresh the projects table
-                    initProjects();
-                }, function(){
-                    //falure
-                });
-                */
-
                 var employeeModel = new entitiesModels.employeeModel();
-                employeeModel.employeeName = $('#newDeveloperName').val();
+                employeeModel.name = $('#newDeveloperName').val();
 
-                nodeService.addNewEmployee($http,employeeModel,function(data){
-                    //Success
-                    alert('success');
-                }, function(data){
-                    //Error
-                    alert(data.err);
-                    alert(data.msg);
+
+
+                var existingEmployee=false;
+                //check if this is a new or existing employee
+                lastEmployeeSearchResult.forEach(function (empl) {
+                   if(empl.name.trim()==employeeModel.name.trim()){
+                       //this is existing employee
+                       existingEmployee=true;
+                   }
                 });
 
-                alert('submitting new developer named:' + $('#newDeveloperName').val() + ' for team:' + $scope.selectedTeam.teamName);
+                //if new employee - create a new employee first
+                if(existingEmployee) {
+                    console.log('employee already existing.... no need to create new one');
+                    //add the employee to the team
+                    addNewTeamMember(employeeModel,$scope.selectedTeam);
+                }else {
+                    console.log('submitting new developer named:' + employeeModel.name + ' for team:' + $scope.selectedTeam.name);
 
-                //check if this is a new or existing employee
-                //if new employee - create a new employee first and then add it to the team
-                //otherwise just add it to the team
+                    nodeService.addNewEmployee($http, employeeModel, function (data) {
+                        //Success
+                        console.log('new employee added successfully');
+                        addNewTeamMember(employeeModel,$scope.selectedTeam);
+                    }, function (data) {
+                        //Error
+                        console.log('failed to add new employee. err:' + data.err + ' msg:' + data.msg);
+                        alert('Failed to add new employee');
+                    });
+                }
 
                 $('#addNewMember').modal('hide');
                 $('#newDeveloperName').val('');
-
             })
 
         }
         initAddNewMemberDialog();
 
+        function addNewTeamMember(employee, team){
+            nodeService.addTeamMember($http,employee,team,
+            function(data){
+                //success
+                alert('employee added');
+            }, function(data){
+                // failure
+                    alert(data.message);
+                });
+        }
 
         //init the list of teams from the server
         function initTeams(){
@@ -156,6 +160,8 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         initTeams();
 
 
+        var lastEmployeeSearchResult;
+
         //initialize the typeahead developers search
         var substringMatcher = function() {
             return function findMatches(q, cb) {
@@ -164,7 +170,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 if((q!=null) && (q.trim()!='')) {
                     nodeService.searchEmployees($http, q, function (data) {
                             //success
-                            strs=data;
+                            lastEmployeeSearchResult=data.searchResult;
 
                             var matches, substrRegex;
 
@@ -176,15 +182,26 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
 
                             // iterate through the pool of strings and for any string that
                             // contains the substring `q`, add it to the `matches` array
-                            $.each(strs, function(i, str) {
-                                if (substrRegex.test(str)) {
+                            $.each(lastEmployeeSearchResult, function(i, str) {
+                                if (substrRegex.test(str.name)) {
                                     // the typeahead jQuery plugin expects suggestions to a
                                     // JavaScript object, refer to typeahead docs for more info
-                                    matches.push({ value: str });
+                                    matches.push({ value: str.name, id:str._id });
                                 }
                             });
 
                             cb(matches);
+
+                            /*
+                            //after the search result are rendered we register an event for each one so we will
+                            //know which one was selected
+                            $('.tt-dataset-employees').children().each(function(i){
+                                $('.tt-dataset-employees').children(i).click(function(){
+                                    alert('a');
+                                });
+                            });
+                            */
+
                         },
                         function (data) {
                             //failure
@@ -201,7 +218,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 minLength: 1
             },
             {
-                name: 'states',
+                name: 'employees',
                 displayKey: 'value',
                 source: substringMatcher()
             });

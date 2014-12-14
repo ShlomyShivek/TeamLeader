@@ -17,9 +17,10 @@ exports.handleRequest=function(req, res){
     var user=authenticationService.getUser(sessionToken);
 
     var employeeModel = require('../../dbModelsInitiator').getDbModel('employee');
-    var employee=new employeeModel(req.body);
+    var employee=new employeeModel();
+    employee.name=req.body.name;
 
-    console.log(employee);
+    console.log('about to submit new employee to teamsService:' + employee);
 
     teamsService.addEmployee(user, employee,function(data){
         //Success

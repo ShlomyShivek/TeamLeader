@@ -67,26 +67,16 @@ define(['angular'], function(angular){
             http.get(rootUrl+'/api/employees/' + searchPatterns)
                 .success(onSuccess)
                 .error(onFailure);
-
-
-            /*
-            var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-                'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-                'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-                'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-                'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-                'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-                'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-                'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-                'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-            ];
-
-            onSuccess(states);
-            */
         },
 
         addNewEmployee: function(http, employee, onSuccess, onFailure){
             http.post(rootUrl+'/api/employees/',angular.toJson(employee))
+                .success(onSuccess)
+                .error(onFailure);
+        },
+
+        addTeamMember:function(http, employee, team, onSuccess, onFailure){
+            http.post(rootUrl+'/api/teams/'+ team.name,angular.toJson(employee))
                 .success(onSuccess)
                 .error(onFailure);
         }

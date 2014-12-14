@@ -14,7 +14,7 @@ define([],function(){
         },
 
         employeeModel:function(){
-            var employeeName;
+            var name;
             var defaultWorkingPercentage;
         }
     }
