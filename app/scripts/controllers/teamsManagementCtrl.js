@@ -16,10 +16,10 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         function teamSelected() {
             nodeService.getTeamMembers($http, $scope.selectedTeam.name, function (data) {
                 //success
-                if((data!=null)&&(data.members!=null)) {
+                if(data!=null) {
                     $scope.selectedTeamMembers = new Array();
-                    data.members.forEach(function (member) {
-                        if (member.id == data.leaderId) {
+                    data.Members.forEach(function (member) {
+                        if (member.name == data.Leader.name) {
                             $scope.selectedTeamLeader = member;
                         }
                         else {

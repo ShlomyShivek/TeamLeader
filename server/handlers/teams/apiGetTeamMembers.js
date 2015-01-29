@@ -19,16 +19,27 @@ exports.handleRequest=function(req, res){
     var requestTeamName = req.params.teamName;
     teamsService.getMembersOfTeam(user,requestTeamName,function(employees){
         //Success
-        var result=new Array();
+
+        var team=new apiModels.Team(requestTeamName);
+
+
+        var members=new Array();
         employees.forEach(function (dbEmployee) {
             var serviceTeamMember=new apiModels.TeamMember(dbEmployee.role);
             serviceTeamMember.name=dbEmployee.name;
             serviceTeamMember.defaultWorkTime=dbEmployee.defaultWorkTime;
-            result.push(serviceTeamMember);
+            members.push(serviceTeamMember);
+            if(dbEmployee.role==apiModels.TeamMemberRole.TeamLeader){
+                team.setLeader(serviceTeamMember);
+            }
         });
-        res.json(result);
-    }, function () {
+        team.Members=members;
+        console.log('returning team members:' + members);
+        res.json(team);
+    }, function (data) {
         //Failure
+        console.log('failed to get members of team');
+        res.status(400).json({err:errorCodes.ApiErrorCodes.UnknownError, msg:'unknown error occurred.'});
     });
 /*
     res.json({leaderId:'23RASFASDFAS', members:[

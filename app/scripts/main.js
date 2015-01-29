@@ -28,7 +28,7 @@ require.config({
     priority:[
         'angular'
     ],
-    urlArgs:'v=0.9'
+    urlArgs:'v=0.8'
 });
 
 require([

@@ -38,6 +38,6 @@ httpListener.startStaticFilesServer();
 
 // START THE SERVER
 // =============================================================================
-var port = process.env.PORT || 8081; 		// set our port
+var port = process.env.PORT || 8085; 		// set our port
 httpListener.app.listen(port);
 console.log('Server starts listening on port ' + port);

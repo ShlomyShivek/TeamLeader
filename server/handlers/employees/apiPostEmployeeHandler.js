@@ -10,6 +10,7 @@ exports.handleRequest=function(req, res){
 
     var errorCodes = require('../../models/errorCodes/ErrorCodes');
 
+    var employeeService=require('../../services/employeesService');
     var teamsService=require('../../services/teamsService');
     var authenticationService=require('../../services/authenticationService');
 
@@ -22,7 +23,7 @@ exports.handleRequest=function(req, res){
 
     console.log('about to submit new employee to teamsService:' + employee);
 
-    teamsService.addEmployee(user, employee,function(data){
+    employeeService.addEmployee(user, employee,function(data){
         //Success
         res.json({ message: 'new employee added' });
     }, function(data){

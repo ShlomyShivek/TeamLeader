@@ -1,6 +1,7 @@
 var teamModel = require('../dbModelsInitiator').getDbModel('team');
 var employeeModel = require('../dbModelsInitiator').getDbModel('employee');
 var errorCodes = require('../models/errorCodes/ErrorCodes');
+var employeesService = require('./employeesService');
 
 //add new team for user
 exports.addTeam=function(user, team, onSuccess, onFailure){
@@ -44,72 +45,26 @@ exports.getTeams=function(user, onSuccess, onFailure){
     })
 }
 
-//create new employee
-exports.addEmployee=function(user,employee,onSuccess, onFailure){
-    if((employee==null)||(employee.name==null)||(employee.name.trim()=='')){
-        onFailure(errorCodes.ServicesErrorCodes.MissingData); //missing employee name
-    }
-    else {
-        employee.save(function (err, model) {
-            if (err) {
-                console.log(err);
-                if (err.code == 11000) {
-                    onFailure(errorCodes.ServicesErrorCodes.DuplicateKey);
-                }
-                else {
-                    onFailure(errorCodes.ServicesErrorCodes.UnknownError);
-                }
-            }
-            else {
-                console.log('New employee entered to DB:' + employee.toString());
-                onSuccess();
-            }
-        });
-    }
-}
 
-//search for employees
-function searchEmployees(searchPattern, onFailure, onSuccess) {
-    console.log('searching for employee:' + searchPattern);
-    employeeModel.find(function (err, employees) {
-        if (err) {
-            console.log('failed to search for employees in DB:' + err);
-            onFailure(errorCodes.ServicesErrorCodes.UnknownError);
-        }
-        else {
-            var result = new Array();
-            console.log('employee search result:' + employees);
-            /*
-            employees.forEach(function (employeeEntry) {
-                var employee = new employeeModel(employeeEntry);
-                result.push(employee);
 
-            });
-            onSuccess(result);
-            */
-            onSuccess(employees);
-        }
-    })
-}
-exports.searchEmployees= function(user,searchPattern,onSuccess,onFailure){
-    searchEmployees(searchPattern, onFailure, onSuccess);
-}
+
 
 //add employee to team
 exports.addEmployeeToTeam=function(user,employeeName,teamName,onSuccess, onFailure) {
     //get the employee details from the database
-
-
-    searchEmployees(user,employeeName,function(data){
+    employeesService.searchEmployees(user,employeeName, true,function(data){
        //success
+        console.log('employee found. adding employee to team');
         if((data!=null)&&(data.length==1)) {
             var dbEmployee = data[0];
             if (dbEmployee.teams == null) {
                 dbEmployee.teams = new Array();
             }
 
+            console.log('searching for team name' + teamName);
             //find the team from the database
             getTeamByName(user, teamName, function(data){
+                console.log('team found');
                 //team found
                 var dbTeam=data;
 
@@ -151,10 +106,10 @@ exports.addEmployeeToTeam=function(user,employeeName,teamName,onSuccess, onFailu
 
 //get team from the database by team name
 function getTeamByName(user, teamName, onSuccess, onFailure){
-    //var tm = require('../dbModelsInitiator').getDbModel('team');
     console.log('searching for team by name:'+teamName);
-    var query=teamModel.where('name', teamName);
-    query.findOne(function(err,dbTeam){
+
+    //var query=teamModel.where('name', teamName);
+    teamModel.findOne({name:teamName},function(err,dbTeam){
         if(err){
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
         }else{
@@ -167,15 +122,14 @@ function getTeamByName(user, teamName, onSuccess, onFailure){
 //get from the database all employees that belongs to specific team id
 function getEmployeesByTeamId(user, teamId, onSuccess, onFailure){
     //look for all employees which have the team id in their list of teams
-    employeeModel.find(function(err,dbEmployees){
+    employeeModel.find({"teams.id":{$in:[teamId]}},function(err,dbEmployees){
         if(err){
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
         }
         else{
             onSuccess(dbEmployees);
         }
-    },{teamIds:{$in:[teamId]}});
-
+    });
 }
 
 //get members of team

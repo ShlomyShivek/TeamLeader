@@ -22,3 +22,13 @@ exports.TeamMemberRole = function(){
     TeamMemberRole.TeamMember = 2;
 }
 
+
+exports.Team = function(teamName){
+    this.Name = teamName;
+    this.Members = new Array();
+    this.Leader = null;
+
+    this.setLeader=function(teamMember){
+        this.Leader=teamMember;
+    }
+}

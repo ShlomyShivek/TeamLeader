@@ -19,6 +19,7 @@ exports.handleRequest=function(req, res){
 
     var requestTeamName = req.params.teamName;
     var employeeName = req.body.name;
+    console.log(req.body);
     console.log('adding new employee '+employeeName+' to team '+requestTeamName);
 
     teamsService.addEmployeeToTeam(user,employeeName,requestTeamName, function(data){

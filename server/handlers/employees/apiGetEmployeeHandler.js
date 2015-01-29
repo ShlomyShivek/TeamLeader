@@ -9,6 +9,7 @@ exports.handleRequest=function(req, res){
 
     console.log('handling ' + JSON.stringify(req.route.methods) + ' ' + req.originalUrl + ' from:' + req.header('referer'));
 
+    var employeeService=require('../../services/employeesService');
     var teamsService=require('../../services/teamsService');
     var authenticationService=require('../../services/authenticationService');
     require('../../models/errorCodes/ErrorCodes');
@@ -16,7 +17,7 @@ exports.handleRequest=function(req, res){
     var sessionToken = req.header('Authentication');
     var user=authenticationService.getUser(sessionToken);
 
-    teamsService.searchEmployees(user, req.params.searchPattern, function(data){
+    employeeService.searchEmployees(user, req.params.searchPattern, false, function(data){
         //Success
         res.json({searchResult:data});
     }, function(data){
