@@ -17,43 +17,29 @@ exports.handleRequest=function(req, res){
     var user=authenticationService.getUser(sessionToken);
 
     var requestTeamName = req.params.teamName;
-    teamsService.getMembersOfTeam(user,requestTeamName,function(employees){
+    teamsService.getMembersOfTeam(user,requestTeamName,function(dbEmployees){
         //Success
+        teamsService.getTeamByName(user,requestTeamName,function(dbTeam){
+            //team found
+            var team=new apiModels.Team(requestTeamName);
 
-        var team=new apiModels.Team(requestTeamName);
-
-
-        var members=new Array();
-        employees.forEach(function (dbEmployee) {
-            var serviceTeamMember=new apiModels.TeamMember(dbEmployee.role);
-            serviceTeamMember.name=dbEmployee.name;
-            serviceTeamMember.defaultWorkTime=dbEmployee.defaultWorkTime;
-            members.push(serviceTeamMember);
-            if(dbEmployee.role==apiModels.TeamMemberRole.TeamLeader){
-                team.setLeader(serviceTeamMember);
-            }
+            dbEmployees.forEach(function (dbEmployee) {
+                var employee=new apiModels.Employee(dbEmployee.name,dbEmployee.defaultWorkTime);
+                var serviceTeamMember=new apiModels.TeamMember(employee);
+                team.Members.push(serviceTeamMember);
+                if(dbEmployee._id.id==dbTeam.leaderId.id){
+                    team.Leader=employee;
+                }
+            });
+            console.log('finshed handling get team members. total of '+team.Members.length + ' found');
+            res.json(team);
+        }, function (data) {
+            //failed to get team from db
+            res.status(400).json({err:errorCodes.ApiErrorCodes.UnknownError, msg:'unknown error occurred.'});
         });
-        team.Members=members;
-        console.log('returning team members:' + members);
-        res.json(team);
-    }, function (data) {
-        //Failure
-        console.log('failed to get members of team');
-        res.status(400).json({err:errorCodes.ApiErrorCodes.UnknownError, msg:'unknown error occurred.'});
-    });
-/*
-    res.json({leaderId:'23RASFASDFAS', members:[
-        {id:'23RASFASDFAS',name:'LeaderFirst LeaderLast'},
-        {id:'dwfksj3434dnfkb',name:'MemberFirst1 MemberLast1'},
-        {id:'dwfhwtwsgbksjdnfkb',name:'MemberFirst2 MemberLast2'}
-    ]});
-*/
-/*
-    var sessionToken = req.header('Authentication');
-    var user=authenticationService.getUser(sessionToken);
 
-    teamsService.getProjects(user,function(projectsForUser){
-        res.json(projectsForUser);
+        }, function(data){
+            //failed to get members of team
+            res.status(400).json({err:errorCodes.ApiErrorCodes.UnknownError, msg:'unknown error occurred.'});
     });
-*/
 }

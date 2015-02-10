@@ -15,9 +15,9 @@ function registerModel(schema) {
 module.exports = function() {
     var employee = new Schema({
         name            :   String,
-        defaultWorkTime :   Number,
-        teams         :   [{id:Schema.Types.ObjectId,
-                            role:Number}]
+        defaultWorkTime :   Number //,
+//        teams         :   [{id:Schema.Types.ObjectId,
+//                            role:Number}]
     });
     registerModel(employee);
 };

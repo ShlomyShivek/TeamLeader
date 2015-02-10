@@ -45,11 +45,11 @@
                         Click this member again for releasing...
                     </div>
                     <div>
-                        <button type="button" class="btn btn-default btn-xs">
+                        <button type="button" class="btn btn-default btn-xs" ng-click="removeFromTeam(selectedTeam,selectedTeamMember);">
                             <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                             remove {{selectedTeamMember.name}} from this team
                         </button>
-                        <button type="button" class="btn btn-default btn-xs">
+                        <button type="button" class="btn btn-default btn-xs" ng-click="setTeamLeader(selectedTeam, selectedTeamMember);">
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                             set {{selectedTeamMember.name}} as leader
                         </button>

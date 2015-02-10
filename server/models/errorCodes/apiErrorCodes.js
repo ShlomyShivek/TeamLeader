@@ -1,7 +1,8 @@
 ApiErrorCodes={
     UnknownError: -1,
-    EmplyeeNameMissing:100,
+    MissingData:100,
     EmplyeeNameAlreadyExists:101,
-    TeamMemberAlreadyExists:102
+    TeamMemberAlreadyExists:102,
+    TeamAlreadyExists:103
 };
 module.exports=ApiErrorCodes;

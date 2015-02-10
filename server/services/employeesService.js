@@ -38,14 +38,20 @@ exports.searchEmployees= function(user,searchPattern, exactMatch ,onSuccess,onFa
         else {
             var result = new Array();
             console.log('employee search result:' + employees);
-            /*
-             employees.forEach(function (employeeEntry) {
-             var employee = new employeeModel(employeeEntry);
-             result.push(employee);
+            onSuccess(employees);
+        }
+    });
+}
 
-             });
-             onSuccess(result);
-             */
+exports.getEmployeesByIds= function(employeesIds, onSuccess, onFailure){
+    employeeModel.find({_id:{$in:employeesIds}},function (err, employees) {
+        if (err) {
+            console.log('failed to search for employees in DB:' + err);
+            onFailure(errorCodes.ServicesErrorCodes.UnknownError);
+        }
+        else {
+            var result = new Array();
+            console.log('employee search result:' + employees);
             onSuccess(employees);
         }
     });

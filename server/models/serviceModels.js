@@ -10,25 +10,21 @@ exports.Employee = function(name,defaultWorkTime){
 }
 
 //team Member
-exports.TeamMember = function(role, employee){
-    this.Role=role;
+exports.TeamMember = function(employee){
+//    this.Role=role;
     this.Employee=employee;
 }
 
-
+/*
 //define the different roles for a teamMember
-exports.TeamMemberRole = function(){
-    TeamMemberRole.TeamLeader = 1;
-    TeamMemberRole.TeamMember = 2;
-}
-
+exports.TeamMemberRoles={
+    TeamLeader:1,
+    TeamMember:2
+};
+*/
 
 exports.Team = function(teamName){
     this.Name = teamName;
     this.Members = new Array();
-    this.Leader = null;
-
-    this.setLeader=function(teamMember){
-        this.Leader=teamMember;
-    }
+    this.Leader=null;
 }

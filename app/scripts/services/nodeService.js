@@ -79,7 +79,18 @@ define(['angular'], function(angular){
             http.post(rootUrl+'/api/teams/'+ team.name,angular.toJson(employee))
                 .success(onSuccess)
                 .error(onFailure);
-        }
+        },
 
+        setTeamLeader:function(http, team, teamMember, onSuccess, onFailure){
+            http.put(rootUrl+'/api/teams/'+team.name+'/'+teamMember.name,angular.toJson(teamMember))
+                .success(onSuccess)
+                .error(onFailure);
+        },
+
+        removeFromTeam:function(http, team, teamMember, onSuccess, onFailure){
+            http.delete(rootUrl+'/api/teams/'+team.name+'/'+teamMember.name)
+                .success(onSuccess)
+                .error(onFailure);
+        }
     }
 })

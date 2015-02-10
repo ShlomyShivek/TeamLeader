@@ -16,14 +16,15 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         function teamSelected() {
             nodeService.getTeamMembers($http, $scope.selectedTeam.name, function (data) {
                 //success
+                $scope.selectedTeamLeader=null;
                 if(data!=null) {
                     $scope.selectedTeamMembers = new Array();
-                    data.Members.forEach(function (member) {
-                        if (member.name == data.Leader.name) {
-                            $scope.selectedTeamLeader = member;
+                    data.Members.forEach(function (teamMember) {
+                        if ((data.Leader!=null) && (data.Leader.name == teamMember.Employee.name) && ($scope.selectedTeamLeader==null)) {
+                            $scope.selectedTeamLeader = teamMember.Employee;
                         }
                         else {
-                            $scope.selectedTeamMembers.push(member);
+                            $scope.selectedTeamMembers.push(teamMember.Employee);
                         }
 
                     });
@@ -32,6 +33,28 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 //failure
                 alert('could not get team members');
             });
+        }
+
+        $scope.setTeamLeader=function(team, teamMember){
+            nodeService.setTeamLeader($http,team,teamMember,
+                function(data){
+                    //success
+                    alert('employee was set as team leader');
+                }, function(data){
+                    // failure
+                    alert(data.message);
+                });
+        }
+
+        $scope.removeFromTeam=function(team, teamMember) {
+            nodeService.removeFromTeam($http,team,teamMember,
+                function(data){
+                    //success
+                    alert('employee was removed from the team');
+                }, function(data){
+                    // failure
+                    alert(data.message);
+                });
         }
 
         //team member selected
@@ -62,10 +85,6 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             }
         }
 
-        $scope.suggestedEmployeeSelected= function () {
-            alert('suggestedEmployeeSelected');
-        }
-
 
         //init events for the "Add New Team" dialog
         function initAddNewTeamDialog(){
@@ -82,7 +101,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                    initTeams();
                }, function(data){
                    //Failure
-                   if(data.err==101){
+                   if(data.err==103){
                        //team name already exists
                        $scope.addNewTeamError = "Team name already exists";
                    }

@@ -30,7 +30,7 @@ exports.handleRequest=function(req, res){
         //Failure
         console.log('failed to create new employee:' + data);
         if(data==errorCodes.ServicesErrorCodes.MissingData){
-            res.status(400).json({err:errorCodes.ApiErrorCodes.EmplyeeNameMissing,msg:'employee name missing', test:4});
+            res.status(400).json({err:errorCodes.ApiErrorCodes.MissingData,msg:'employee name missing', test:4});
         } else if (data==101){
             res.status(400).json({err:errorCodes.ApiErrorCodes.EmplyeeNameAlreadyExists , msg:'employee name already exists'});
         }else{

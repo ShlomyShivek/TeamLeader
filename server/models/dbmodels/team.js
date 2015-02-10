@@ -14,8 +14,20 @@ function registerModel(schema) {
 
 module.exports = function() {
     var team = new Schema({
-        name         : String
+        name            : String,
+        members         :[{employeeId:Schema.Types.ObjectId}],
+        leaderId        : Schema.Types.ObjectId
     });
+
+    team.methods.removeMember=function(employeeId) {
+        for (var i = 0; i < this.members.length; i++) {
+            if (this.members[i].employeeId.id == employeeId) {
+                this.members.splice(i, 1);
+                break;
+            }
+        }
+    };
+
     registerModel(team);
 };
 
