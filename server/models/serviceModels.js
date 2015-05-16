@@ -4,27 +4,29 @@ This file describes the models that are exposed by the api
  */
 
 //employee model
-exports.Employee = function(name,defaultWorkTime){
+exports.Employee = function(name,defaultWorkTime,id){
+    this.id=id;
     this.name=name;
     this.defaultWorkTime=defaultWorkTime;
 }
 
 //team Member
 exports.TeamMember = function(employee){
-//    this.Role=role;
     this.Employee=employee;
 }
 
-/*
-//define the different roles for a teamMember
-exports.TeamMemberRoles={
-    TeamLeader:1,
-    TeamMember:2
-};
-*/
 
 exports.Team = function(teamName){
     this.Name = teamName;
     this.Members = new Array();
     this.Leader=null;
+}
+
+
+exports.Project = function(projectName){
+    this.Name = projectName;
+    this.Starts = null;
+    this.Ends = null;
+    this.WorkingDays = null;
+    this.Tasks = new Array();
 }

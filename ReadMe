@@ -33,7 +33,7 @@ How to add new html template:
     1. Create new template html file under the templates folder. This is the user interface that will interact with
        the controller.
     2. Create new controller js file for the template under the controllers folder.
-    3. Update the routes.js file to redirect the application to your template for sepcific url.
+    3. Update the routes.js file to redirect the application to your template for specific url.
 
 
 nodeJS

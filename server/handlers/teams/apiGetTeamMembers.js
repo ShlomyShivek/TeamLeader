@@ -24,13 +24,15 @@ exports.handleRequest=function(req, res){
             var team=new apiModels.Team(requestTeamName);
 
             dbEmployees.forEach(function (dbEmployee) {
-                var employee=new apiModels.Employee(dbEmployee.name,dbEmployee.defaultWorkTime);
+                var employee=new apiModels.Employee(dbEmployee.name,dbEmployee.defaultWorkTime,dbEmployee.id);
                 var serviceTeamMember=new apiModels.TeamMember(employee);
                 team.Members.push(serviceTeamMember);
-                if(dbEmployee._id.id==dbTeam.leaderId.id){
+                //set the team leader in the result object
+                if(dbTeam.leaderId==dbEmployee.id){
                     team.Leader=employee;
                 }
             });
+
             console.log('finshed handling get team members. total of '+team.Members.length + ' found');
             res.json(team);
         }, function (data) {

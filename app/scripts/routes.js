@@ -6,6 +6,7 @@ define([
         'controllers/loginCtrl',
         'controllers/addNewProjectCtrl',
         'controllers/readmeCtrl',
+        'controllers/ProjectCtrl',
         'controllers/homeCtrl'
      ],
     function (mainApp) {
@@ -16,6 +17,7 @@ define([
             $routeProvider.when('/dashboard', { controller: 'DashboardCtrl', templateUrl: '/templates/dashboard.html' });
             $routeProvider.when('/addproject', { controller: 'AddNewProjectCtrl', templateUrl: '/templates/addNewProject.html' });
             $routeProvider.when('/teams', { controller: 'TeamsEditorCtrl', templateUrl: '/templates/teamsManagement.html' });
+            $routeProvider.when('/projects/:projectName', { controller: 'ProjectCtrl', templateUrl: '/templates/projectManagement.html' });
 
 
             $routeProvider.when('/helloWorld', { controller: 'HelloWorldCtrl', templateUrl: '/templates/helloWorld.html' });

@@ -9,13 +9,14 @@ define([],function(){
             var availableDevDays;
         },
 
-        teamModel:function(){
-            var name;
-        },
 
         employeeModel:function(){
             var name;
             var defaultWorkingPercentage;
+        },
+
+        teamModel:function(){
+            var name;
         }
     }
 })

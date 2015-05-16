@@ -1,5 +1,5 @@
 define(['../app', '../services/nodeService','../models/entitiesModels'],function(myApp, nodeService, entitiesModels){
-    myApp.controller('DashboardCtrl',['$scope','$http',function controller($scope, $http){
+    myApp.controller('DashboardCtrl',['$scope','$http','$location',function controller($scope, $http,$location){
 
         function initProjects(){
             nodeService.getProjects($http,
@@ -17,6 +17,11 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 })
         }
 
+        $scope.projectSelected=function(projectName){
+            //alert(projectName);
+            $location.path('/projects/' + projectName);
+        }
+
         function initDialog(){
             $('#myModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
@@ -32,6 +37,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
 
             //jQuery to the rescue........
             $('#saveDelete').click(function(){
+//                alert($scope.selectedProjectForDelete);
                 nodeService.deleteProject($http,$scope.selectedProjectForDelete,function(){
                     //success
                     //refresh the projects table

@@ -8,6 +8,7 @@ exports.verb='POST';
 exports.handleRequest=function(req, res){
 
     console.log('handling ' + JSON.stringify(req.route.methods) + ' ' + req.originalUrl + ' from:' + req.header('referer'));
+    var errorCodes = require('../../models/errorCodes/ErrorCodes');
 
     var teamsService=require('../../services/teamsService');
     var authenticationService=require('../../services/authenticationService');
@@ -28,7 +29,7 @@ exports.handleRequest=function(req, res){
         console.log('failed to create new team');
         if(data==errorCodes.ServicesErrorCodes.MissingData){
             res.status(400).json({err:errorCodes.ApiErrorCodes.MissingData,message:'team name missing'});
-        } else if (data==101){
+        } else if (data==errorCodes.ServicesErrorCodes.ItemAlreadyExists){
             res.status(400).json({err:errorCodes.ApiErrorCodes.TeamAlreadyExists, message:'team name already exists'});
         }else{
             res.status(400).json({err:errorCodes.ApiErrorCodes.UnknownError, message:'unknown error occurred.'});

@@ -9,28 +9,39 @@ exports.addTeam=function(user, team, onSuccess, onFailure){
     if((team==null)||(team.name==null)||(team.name.trim()=='')){
         onFailure(errorCodes.ServicesErrorCodes.MissingData); //missing team name
     }
-    console.log(team);
+    getTeamByName(user,team.name,
+        function(dbTeam){
+            //got team from db
+            if(dbTeam!=null){
+                //team already exists
+                onFailure(errorCodes.ServicesErrorCodes.ItemAlreadyExists);
+            }else{
+                team.save(function(err,model){
+                    if (err) {
+                        console.log(err);
+                        if(err.code==11000){
+                            onFailure(errorCodes.ServicesErrorCodes.DuplicateKey);
+                        }
+                        else{
+                            onFailure(errorCodes.ServicesErrorCodes.UnknownError);
+                        }
+                    }
+                    else{
+                        console.log('New data entered to DB:' + team.toString());
+                        onSuccess();
+                    }
+                });
+            }
+        },
+        function(data){
+           //failed to get team from the db
+        });
 
-    team.save(function(err,model){
-        if (err) {
-            console.log(err);
-            if(err.code==11000){
-                onFailure(errorCodes.ServicesErrorCodes.DuplicateKey);
-            }
-            else{
-                onFailure(errorCodes.ServicesErrorCodes.UnknownError);
-            }
-        }
-        else{
-            console.log('New data entered to DB:' + team.toString());
-            onSuccess();
-        }
-    });
 }
 
 //get all teams for user
 exports.getTeams=function(user, onSuccess, onFailure){
-    teamModel.find(function (err, teams) {
+    teamModel.find({deleted:null}, function (err, teams) {
         if (err) {
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
             return console.error(err);
@@ -45,10 +56,6 @@ exports.getTeams=function(user, onSuccess, onFailure){
         }
     })
 }
-
-
-
-
 
 //add employee to team
 exports.addEmployeeToTeam=function(user,employeeName,teamName,onSuccess, onFailure) {
@@ -106,7 +113,6 @@ function updateTeam(dbTeam, onSuccess, onFailure) {
     })
 }
 
-
 //get team from the database by team name
 exports.getTeamByName = function (user, teamName, onSuccess, onFailure){
     return getTeamByName(user,teamName,onSuccess,onFailure);
@@ -116,7 +122,7 @@ function getTeamByName(user, teamName, onSuccess, onFailure) {
     console.log('searching for team by name:'+teamName);
 
     //var query=teamModel.where('name', teamName);
-    teamModel.findOne({name:teamName},function(err,dbTeam){
+    teamModel.findOne({name:teamName, deleted:null},function(err,dbTeam){
         if(err){
             onFailure(errorCodes.ServicesErrorCodes.UnknownError);
         }else{
@@ -172,7 +178,32 @@ exports.removeMemberFromTeam= function (user,teamName,employeeName,onSuccess, on
     }
 }
 
+//delete a team
+exports.removeTeam=function(user, teamName, onSuccess, onFailure){
+    if(teamName==null) {
+        onFailure(errorCodes.ServicesErrorCodes.MissingData);
+    }else{
+        this.getTeamByName(user,teamName,
+            function(dbTeam){
+                //got the team details from database
+                dbTeam.deleted=Date.now();
+                updateTeam(dbTeam,
+                    function(){
+                       //team updated
+                        onSuccess();
+                    },
+                    function(){
+                        //failed to update team
+                        onFailure();
+                    });
+            },
+            function(data){
+               //failed to get team from DB
+                onFailure();
+            });
+    }
 
+}
 
 //assign member as team leader
 exports.assignTeamLeader=function(user,teamName,employeeName,onSuccess, onFailure){

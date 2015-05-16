@@ -18,7 +18,7 @@ exports.getProjects=function(user, callback){
 }
 
 exports.addProject= function (project, user, onSuccess, onFailure) {
-    if((project==null)||(project.projectName==null)||(project.projectName.trim()=='')){
+    if((project==null)||(project.name==null)||(project.name.trim()=='')){
         onFailure(100); //missing project name
     }
     project.save(function (err, model) {
@@ -36,7 +36,7 @@ exports.addProject= function (project, user, onSuccess, onFailure) {
 exports.deleteProject = function(projectName, user, onSuccess, onFailure) {
 
     var project = new projectsModel({projectName: projectName});
-    projectsModel.remove({projectName: projectName}, function (err) {
+    projectsModel.remove({name: projectName}, function (err) {
         if (!err) {
             console.log('success delete');
   //          message.type = 'notification!';

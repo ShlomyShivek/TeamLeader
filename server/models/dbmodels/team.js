@@ -16,7 +16,8 @@ module.exports = function() {
     var team = new Schema({
         name            : String,
         members         :[{employeeId:Schema.Types.ObjectId}],
-        leaderId        : Schema.Types.ObjectId
+        leaderId        : Schema.Types.ObjectId,
+        deleted         : Date
     });
 
     team.methods.removeMember=function(employeeId) {

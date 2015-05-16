@@ -12,7 +12,6 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             teamSelected();
         }
 
-
         function teamSelected() {
             nodeService.getTeamMembers($http, $scope.selectedTeam.name, function (data) {
                 //success
@@ -39,7 +38,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             nodeService.setTeamLeader($http,team,teamMember,
                 function(data){
                     //success
-                    alert('employee was set as team leader');
+                    teamSelected();
                 }, function(data){
                     // failure
                     alert(data.message);
@@ -50,7 +49,8 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             nodeService.removeFromTeam($http,team,teamMember,
                 function(data){
                     //success
-                    alert('employee was removed from the team');
+                    //alert('employee was removed from the team');
+                    teamSelected();
                 }, function(data){
                     // failure
                     alert(data.message);
@@ -58,33 +58,42 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         }
 
         //team member selected
-        $scope.teamMemberSelected=function(member){
-            $("button[memberId]").each(function (index) {
-                if($(this).attr("memberId") != member.id){
-                    $(this).addClass("disabled");
-                }
-            })
-
-            if($scope.selectedTeamMember==null){
+        $scope.teamMemberSelected=function(member) {
+            if ($scope.selectedTeamMember == null) {
                 //set the clicked member as selected
-                $scope.selectedTeamMember=member;
+                $scope.selectedTeamMember = member;
 
+                //disable all other members
                 $("button[memberId]").each(function (index) {
-                    if($(this).attr("memberId") != member.id){
+                    if ($(this).attr("memberId") != member.id) {
                         $(this).addClass("disabled");
                     }
                 })
 
-            } else if($scope.selectedTeamMember.id==member.id){
+            } else if ($scope.selectedTeamMember.id == member.id) {
                 //the same member clicked twice. clear selection
-                $scope.selectedTeamMember=null;
-
+                $scope.selectedTeamMember = null;
+                //allow selecting any other member
                 $("button[memberId]").each(function (index) {
                     $(this).removeClass("disabled");
                 })
             }
         }
 
+        $scope.deleteTeam=function (team){
+            nodeService.deleteTeam($http,team,
+                function(){
+                    //team deleted successfully
+                    $scope.selectedTeam = null;
+                    $scope.selectedTeamMember=null;
+                    $scope.selectedTeamMembers=null;
+                    $scope.addNewTeamError=null;
+                    initTeams();
+                },
+                function(){
+                    //failed to delete team
+                });
+        }
 
         //init events for the "Add New Team" dialog
         function initAddNewTeamDialog(){
@@ -157,10 +166,10 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
             nodeService.addTeamMember($http,employee,team,
             function(data){
                 //success
-                alert('employee added');
+                teamSelected();
             }, function(data){
                 // failure
-                    alert(data.message);
+                    alert('Failed to add member to team:' + data.message);
                 });
         }
 
@@ -168,10 +177,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
         function initTeams(){
             nodeService.getTeams($http, function(data){
                 //onSuccess
-                //$scope.teams=new Array();
-                //data.teams.forea
-                //var team = new entitiesModels.teamModel();
-                $scope.teams = data;
+                $scope.teams = data.sort(function(a,b){return a.name.toString().localeCompare(b.name);});
             }, function(data){
                 //onFailure
             });

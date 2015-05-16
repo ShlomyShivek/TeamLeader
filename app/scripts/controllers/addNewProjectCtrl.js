@@ -17,7 +17,7 @@ define(['../app', '../services/nodeService','../models/entitiesModels'],function
                 var endDate = $('#end').datepicker('getDate');
 
                 var projectModel = new entitiesModels.projectModel();
-                projectModel.projectName = $scope.projectName;
+                projectModel.name = $scope.projectName;
                 projectModel.workingDays = $scope.workingDays;
                 projectModel.startDate = startDate;
                 projectModel.finishDate = endDate;

@@ -1,8 +1,8 @@
 /*
-Remove member from the team
+Remove team
  */
 //the url path to be used for this handler
-exports.path='/teams/:teamName/:memberName';
+exports.path='/teams/:teamName';
 
 //the http verb to be used for this handler
 exports.verb='DELETE';
@@ -19,14 +19,13 @@ exports.handleRequest=function(req, res){
     var user=authenticationService.getUser(sessionToken);
 
     var requestTeamName = req.params.teamName;
-    var memberName = req.params.memberName;
 
-    teamsService.removeMemberFromTeam(user,requestTeamName,memberName, function (data) {
+    teamsService.removeTeam(user,requestTeamName, function (data) {
         //Success
-        res.status(200).json({ message: 'member removed from team' });
+        res.status(200).json({ message: 'team deleted' });
     },function(data){
        //Failure
-        console.log('failed to remove member from team');
+        console.log('failed to delete team');
         if(data==100){
             res.status(400).json({err:100,message:'team name missing'});
         } else if (data==101){

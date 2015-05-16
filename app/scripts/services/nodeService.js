@@ -91,6 +91,12 @@ define(['angular'], function(angular){
             http.delete(rootUrl+'/api/teams/'+team.name+'/'+teamMember.name)
                 .success(onSuccess)
                 .error(onFailure);
+        },
+
+        deleteTeam:function(http, team, onSuccess, onFailure){
+            http.delete(rootUrl+'/api/teams/'+team.name)
+                .success(onSuccess)
+                .error(onFailure);
         }
     }
 })

@@ -1,5 +1,5 @@
 <div>
-    this is the dashboard page
+Team Leader - a practocal approach to software project management (PPjM)
 </div>
 <div>
 
@@ -14,9 +14,9 @@
                 <th>Total Dev. Days</th>
                 <th>Available Dev. Days</th>
             </tr>
-            <tr ng-repeat="project in projects">
-                <td><img src="/images/trash.ico" style="width: 20px; height: 20px" data-toggle="modal" data-target="#myModal" data-whatever={{project.projectName}}/></td>
-                <td>{{project.projectName}}</td>
+            <tr ng-repeat="project in projects" ng-click="projectSelected(project.name);">
+                <td><img src="/images/trash.ico" style="width: 20px; height: 20px" data-toggle="modal" data-target="#myModal" data-whatever={{project.name}}/></td>
+                <td>{{project.name}}</td>
                 <td>{{project.workingDays}}</td>
                 <td>{{project.startDate.toLocaleDateString()}}</td>
                 <td>{{project.finishDate.toLocaleDateString()}}</td>

@@ -28,7 +28,7 @@
             <!-- display the selected team details -->
             <div ng-show="selectedTeam!=null">
 
-                <h2>Manage Your {{selectedTeam.name}} Team</h2>
+                <h2>Manage Your {{selectedTeam.name}} Team</h2> <button type="button" ng-click="deleteTeam(selectedTeam)">Delete Team</button>
                 <button type="button" class="btn btn-primary" memberId="{{selectedTeamLeader.id}}"
                         ng-click="teamMemberSelected(selectedTeamLeader);">{{selectedTeamLeader.name}}</button>
                 <div>

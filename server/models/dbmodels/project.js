@@ -18,8 +18,8 @@ module.exports = function() {
         , workingDays       : Number
         , startDate         : Date
         , finishDate        : Date
-        , totalDevDays      : Number
-        , availableDevDays  : Number
+        , totalDevDays      : Number //???
+        , availableDevDays  : Number //???
 
     });
     registerModel(project);

@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97205d99-6e90-444e-9b47-216ff52bc6d5" name="Default" comment="" />
+    <list default="true" id="97205d99-6e90-444e-9b47-216ff52bc6d5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/controllers/ProjectCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamHandler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/projectManagement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReadMe" afterPath="$PROJECT_DIR$/ReadMe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/addNewProjectCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/addNewProjectCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js" afterPath="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/handlers/teams/apiGetTeamMembers.js" afterPath="$PROJECT_DIR$/server/handlers/teams/apiGetTeamMembers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js" afterPath="$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/dashboard.html" afterPath="$PROJECT_DIR$/app/templates/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/dashboardCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/dashboardCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/models/entitiesModels.js" afterPath="$PROJECT_DIR$/app/scripts/models/entitiesModels.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/nodeService.js" afterPath="$PROJECT_DIR$/app/scripts/services/nodeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/dbmodels/project.js" afterPath="$PROJECT_DIR$/server/models/dbmodels/project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/projectsService.js" afterPath="$PROJECT_DIR$/server/services/projectsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/routes.js" afterPath="$PROJECT_DIR$/app/scripts/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/serviceModels.js" afterPath="$PROJECT_DIR$/server/models/serviceModels.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/dbmodels/team.js" afterPath="$PROJECT_DIR$/server/models/dbmodels/team.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/teamsManagement.html" afterPath="$PROJECT_DIR$/app/templates/teamsManagement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/services/teamsService.js" afterPath="$PROJECT_DIR$/server/services/teamsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="HelloWorld.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,20 +37,118 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="HelloWorld" />
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="teamsManagementCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teamsManagement.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/teamsManagement.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.826923">
+              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#pre#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/dbmodels/team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nodeService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/nodeService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apiDeleteTeamHandler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="teamsService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/services/teamsService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2892" max-vertical-offset="3485">
-              <caret line="187" column="35" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <folding>
+                <element signature="e#1898#1999#0" expanded="false" />
+                <element signature="e#2160#3671#0" expanded="false" />
+                <element signature="e#2286#3656#0" expanded="false" />
+                <element signature="e#2412#3568#0" expanded="false" />
+                <element signature="e#2494#2557#0" expanded="false" />
+                <element signature="e#2726#3546#0" expanded="false" />
+                <element signature="e#2916#3133#0" expanded="false" />
+                <element signature="e#2965#3115#0" expanded="false" />
+                <element signature="e#3186#3361#0" expanded="false" />
+                <element signature="e#3382#3532#0" expanded="false" />
+                <element signature="e#3572#3649#0" expanded="false" />
+                <element signature="n#!!block;n#updateTeam#0" expanded="false" />
+                <element signature="e#3812#4090#0" expanded="false" />
+                <element signature="e#3831#3989#0" expanded="false" />
+                <element signature="e#4003#4084#0" expanded="false" />
+                <element signature="e#4810#5359#0" expanded="false" />
+                <element signature="e#4865#5355#0" expanded="false" />
+                <element signature="e#4975#5036#0" expanded="false" />
+                <element signature="e#5118#5209#0" expanded="false" />
+                <element signature="e#5226#5347#0" expanded="false" />
+                <element signature="e#5476#6496#0" expanded="false" />
+                <element signature="e#5524#5593#0" expanded="false" />
+                <element signature="e#5597#6494#0" expanded="false" />
+                <element signature="e#5662#6378#0" expanded="false" />
+                <element signature="e#5783#6366#0" expanded="false" />
+                <element signature="e#5821#6156#0" expanded="false" />
+                <element signature="e#6160#6352#0" expanded="false" />
+                <element signature="e#6393#6487#0" expanded="false" />
+                <element signature="e#7408#8422#0" expanded="false" />
+                <element signature="e#7456#7525#0" expanded="false" />
+                <element signature="e#7529#8420#0" expanded="false" />
+                <element signature="e#7594#8304#0" expanded="false" />
+                <element signature="e#7715#8292#0" expanded="false" />
+                <element signature="e#7753#8082#0" expanded="false" />
+                <element signature="e#8086#8278#0" expanded="false" />
+                <element signature="e#8319#8413#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apiPostTeamHandler.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30567083">
+              <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -37,90 +157,28 @@
       <file leaf-file-name="apiPutTeamLeaderHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPutTeamLeaderHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="782">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="67" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpecRunner.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tests/SpecRunner.html">
+      <file leaf-file-name="servicesErrorCodes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/errorCodes/servicesErrorCodes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="612">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sandbox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/tests/spec/sandbox.js">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="408">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamsManagementCtrl.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51872396" vertical-offset="0" max-vertical-offset="4318">
-              <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serviceModels.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/serviceModels.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="561">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiGetTeamMembers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiGetTeamMembers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="850">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/dbmodels/team.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="663">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiDeleteTeamMemberHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apiPostTeamHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="714">
-              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,15 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/templates/teamsEditor.html" />
-        <option value="$PROJECT_DIR$/app/templates/teamsManager.html" />
-        <option value="$PROJECT_DIR$/app/styles.css" />
-        <option value="$PROJECT_DIR$/server/services/projectsService.js" />
-        <option value="$PROJECT_DIR$/server/models/dbmodels/project.js" />
-        <option value="$PROJECT_DIR$/app/scripts/models/authenticationModel.js" />
-        <option value="$PROJECT_DIR$/app/scripts/models/teamModel.js" />
-        <option value="$PROJECT_DIR$/server/handlers/apiGetTeamMembers.js" />
-        <option value="$PROJECT_DIR$/server/handlers/apiGetTeams.js" />
         <option value="$PROJECT_DIR$/server/handlers/apiPostTeamHandler.js" />
         <option value="$PROJECT_DIR$/server/package.json" />
         <option value="$PROJECT_DIR$/server/router.js" />
@@ -158,43 +207,56 @@
         <option value="$PROJECT_DIR$/server/ErrorCodes.js" />
         <option value="$PROJECT_DIR$/server/models/errorCodes/errorCodes.js" />
         <option value="$PROJECT_DIR$/server/handlers/teams/apiGetTeams.js" />
-        <option value="$PROJECT_DIR$/app/scripts/models/entitiesModels.js" />
         <option value="D:/work/Samples/WebAppTemplate/server/dbModelsInitiator.js" />
         <option value="D:/work/Samples/WebAppTemplate/server/router.js" />
-        <option value="$PROJECT_DIR$/ReadMe" />
         <option value="$PROJECT_DIR$/server/handlers/teams/apiPostAddEmployeeToTeamHandler.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
         <option value="$PROJECT_DIR$/server/httpListener.js" />
         <option value="$PROJECT_DIR$/server/handlers/employees/apiPostEmployeeHandler.js" />
         <option value="$PROJECT_DIR$/server/handlers/employees/apiGetEmployeeHandler.js" />
-        <option value="$PROJECT_DIR$/app/templates/teamsManagement.html" />
-        <option value="$PROJECT_DIR$/app/scripts/services/nodeService.js" />
         <option value="$PROJECT_DIR$/server/models/errorCodes/apiErrorCodes.js" />
         <option value="$PROJECT_DIR$/server/models/dbmodels/employee.js" />
         <option value="$PROJECT_DIR$/server/services/employeesService.js" />
-        <option value="$PROJECT_DIR$/server/models/serviceModels.js" />
         <option value="$PROJECT_DIR$/server/models/errorCodes/servicesErrorCodes.js" />
         <option value="$PROJECT_DIR$/app/tests/spec/loginCtrolSpec.js" />
         <option value="$PROJECT_DIR$/app/tests/SpecRunner.html" />
         <option value="$PROJECT_DIR$/app/tests/spec/sandbox.js" />
-        <option value="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js" />
-        <option value="$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js" />
         <option value="$PROJECT_DIR$/server/handlers/teams/apiPutTeamLeaderHandler.js" />
-        <option value="$PROJECT_DIR$/server/models/dbmodels/team.js" />
-        <option value="$PROJECT_DIR$/server/services/teamsService.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/addNewProjectCtrl.js" />
+        <option value="$PROJECT_DIR$/server/services/projectsService.js" />
+        <option value="$PROJECT_DIR$/ReadMe" />
+        <option value="$PROJECT_DIR$/app/scripts/routes.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/ProjectCtrl.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/dashboardCtrl.js" />
+        <option value="$PROJECT_DIR$/app/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/app/templates/projectManagement.html" />
+        <option value="$PROJECT_DIR$/server/models/dbmodels/project.js" />
         <option value="$PROJECT_DIR$/server/handlers/teams/apiGetTeamMembers.js" />
+        <option value="$PROJECT_DIR$/server/models/serviceModels.js" />
+        <option value="$PROJECT_DIR$/app/scripts/models/entitiesModels.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/nodeService.js" />
+        <option value="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js" />
+        <option value="$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamHandler.js" />
+        <option value="$PROJECT_DIR$/server/models/dbmodels/team.js" />
+        <option value="$PROJECT_DIR$/app/templates/teamsManagement.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js" />
+        <option value="$PROJECT_DIR$/server/services/teamsService.js" />
+        <option value="$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
+    <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -306,6 +368,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="errorCodes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TeamLeader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TeamLeader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dbmodels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -378,29 +462,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TeamLeader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TeamLeader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,6 +524,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TeamLeader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TeamLeader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -469,17 +553,18 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="last_opened_file_path" value="D:/work/Samples/WebAppTemplate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.lastSelected" value="preferences.lookFeel" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="team.js&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/team.js&#10;readme&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;apipu&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/teams/apiPutTeamLeaderHandler.js&#10;teamserv&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;serviceerr&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/errorCodes/servicesErrorCodes.js&#10;startst&#9;null&#9;null&#10;http&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/httpListener.js&#10;8081&#9;null&#9;null&#10;read&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;readm&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;teamser&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;team&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;ERROR&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/ErrorCodes.js&#10;ApiErrorCodes&#9;null&#9;null&#10;apierror&#9;null&#9;null&#10;colla&#9;ACTION&#9;CollapseAll&#10;emplo&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/employee.js&#10;teamsse&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;employee&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/employee.js&#10;apigette&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/apiGetTeamMembers.js&#10;nodese&#9;FILE&#9;file://D:/GitProjects/TeamLeader/app/scripts/services/nodeService.js&#10;postteam&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/apiPostTeamHandler.js&#10;teamservice&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;nodeser&#9;FILE&#9;file://D:/GitProjects/TeamLeader/app/scripts/services/nodeService.js&#10;foreach&#9;null&#9;null&#10;appacti&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/applicationActivityService.js&#10;alert(&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="apigette&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/teams/apiGetTeamMembers.js&#10;totalDevDays&#9;null&#9;null&#10;readme&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;dash&#9;FILE&#9;file://D:/GitProjects/TeamLeader/app/templates/dashboard.html&#10;team.js&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/team.js&#10;apipu&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/teams/apiPutTeamLeaderHandler.js&#10;teamserv&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;serviceerr&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/errorCodes/servicesErrorCodes.js&#10;startst&#9;null&#9;null&#10;http&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/httpListener.js&#10;8081&#9;null&#9;null&#10;read&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;readm&#9;FILE&#9;file://D:/GitProjects/TeamLeader/ReadMe&#10;teamser&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;team&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;ERROR&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/ErrorCodes.js&#10;ApiErrorCodes&#9;null&#9;null&#10;apierror&#9;null&#9;null&#10;colla&#9;ACTION&#9;CollapseAll&#10;emplo&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/employee.js&#10;teamsse&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;employee&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/models/dbmodels/employee.js&#10;nodese&#9;FILE&#9;file://D:/GitProjects/TeamLeader/app/scripts/services/nodeService.js&#10;postteam&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/handlers/apiPostTeamHandler.js&#10;teamservice&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/teamsService.js&#10;nodeser&#9;FILE&#9;file://D:/GitProjects/TeamLeader/app/scripts/services/nodeService.js&#10;foreach&#9;null&#9;null&#10;appacti&#9;FILE&#9;file://D:/GitProjects/TeamLeader/server/services/applicationActivityService.js&#10;alert(&#9;null&#9;null" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
@@ -487,8 +572,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitProjects\TeamLeader\app\tests\spec" />
       <recent name="D:\GitProjects\TeamLeader\server\handlers\teams" />
+      <recent name="D:\GitProjects\TeamLeader\app\tests\spec" />
       <recent name="D:\GitProjects\TeamLeader\server\handlers\employees" />
       <recent name="D:\GitProjects\TeamLeader\server\models\dbmodels" />
       <recent name="D:\GitProjects\TeamLeader\app\scripts\models" />
@@ -512,21 +597,21 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node.js Remote Debug" editBeforeRun="true">
       <node-js-remote-debug debug-port="49977" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
@@ -659,29 +744,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2152381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2590247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22162884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22088353" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22957198" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34362417" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34362417" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22845417" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -698,9 +783,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <MESSAGE value="basic login functionality" />
     <MESSAGE value="Application template added" />
     <MESSAGE value="Dashboard projects and add new project form added" />
@@ -719,11 +801,21 @@
           <line>30</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/handlers/projects/apiPostProjectHandler.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/handlers/projects/apiDeleteProjectHandler.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="98" />
+      <option name="time" value="106" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -737,385 +829,422 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/handlers/apiGetTestHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18967922" vertical-offset="0" max-vertical-offset="717">
-          <caret line="8" column="124" selection-start-line="8" selection-start-column="124" selection-end-line="8" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/login/apiPostLoginHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18941504" vertical-offset="0" max-vertical-offset="718">
-          <caret line="8" column="124" selection-start-line="8" selection-start-column="124" selection-end-line="8" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/work/Samples/WebAppTemplate/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36082473" vertical-offset="64" max-vertical-offset="816">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/appActivityLog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6520619" vertical-offset="36" max-vertical-offset="425">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/work/Samples/WebAppTemplate/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33247423" vertical-offset="92" max-vertical-offset="629">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/apiGetReadmeHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6572165" vertical-offset="0" max-vertical-offset="388">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/work/Samples/WebAppTemplate/server/node_modules/mongoose/node_modules/mongodb/lib/mongodb/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46933332" vertical-offset="4601" max-vertical-offset="33320">
-          <caret line="281" column="7" selection-start-line="281" selection-start-column="7" selection-end-line="281" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/work/Samples/WebAppTemplate/server/services/applicationActivityService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.043814432" vertical-offset="0" max-vertical-offset="388">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/work/Samples/WebAppTemplate/server/dbModelsInitiator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52577317" vertical-offset="0" max-vertical-offset="391">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.WebStorm9/system/extLibs/nodejs-v0.10.33-src/core-modules-sources/lib/module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36082473" vertical-offset="5300" max-vertical-offset="8925">
-          <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiPostProjectHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21338913" vertical-offset="0" max-vertical-offset="717">
-          <caret line="9" column="124" selection-start-line="9" selection-start-column="124" selection-end-line="9" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiGetProjectsHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28451884" vertical-offset="0" max-vertical-offset="717">
-          <caret line="12" column="124" selection-start-line="12" selection-start-column="124" selection-end-line="12" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiDeleteProjectHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28451884" vertical-offset="0" max-vertical-offset="717">
-          <caret line="12" column="124" selection-start-line="12" selection-start-column="124" selection-end-line="12" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32133675" vertical-offset="4907" max-vertical-offset="6613">
-          <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/express/lib/router/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33161953" vertical-offset="1690" max-vertical-offset="3349">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3551532" vertical-offset="0" max-vertical-offset="718">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29787233" vertical-offset="17487" max-vertical-offset="38964">
-          <caret line="1043" column="42" selection-start-line="1043" selection-start-column="42" selection-end-line="1043" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="718">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/httpListener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.740638" vertical-offset="163" max-vertical-offset="884">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80166435" vertical-offset="0" max-vertical-offset="816">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/handlers/employees/apiGetEmployeeHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+        <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/models/entitiesModels.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51031893" vertical-offset="0" max-vertical-offset="533">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiGetTeams.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/document.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33286518" vertical-offset="11595" max-vertical-offset="29410">
+        <state vertical-scroll-proportion="0.33286518">
           <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/node_modules/mpromise/lib/promise.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3517241" vertical-offset="1774" max-vertical-offset="4658">
+        <state vertical-scroll-proportion="1.3517241">
           <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3324138" vertical-offset="6814" max-vertical-offset="11475">
+        <state vertical-scroll-proportion="0.3324138">
           <caret line="417" column="0" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/teamsManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.230769" vertical-offset="559" max-vertical-offset="2176">
-          <caret line="47" column="101" selection-start-line="47" selection-start-column="101" selection-end-line="47" selection-end-column="101" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/models/errorCodes/apiErrorCodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="21" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/handlers/employees/apiPostEmployeeHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2828619" vertical-offset="0" max-vertical-offset="765">
+        <state vertical-scroll-proportion="0.2828619">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/employee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPostAddEmployeeToTeamHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tests/spec/PlayerSpec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/tests/spec/SpecHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/loginCtrl.js">
+    <entry file="file://$PROJECT_DIR$/server/models/errorCodes/errorCodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
+        <state vertical-scroll-proportion="0.059859157">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/employeesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/spec/sandbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11789182">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/SpecRunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56258994">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiGetProjectsHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28294036">
+          <caret line="12" column="124" selection-start-line="12" selection-start-column="124" selection-end-line="12" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/mongoose/lib/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2200" column="0" selection-start-line="2200" selection-start-column="0" selection-end-line="2200" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiDeleteProjectHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5635359">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/addNewProjectCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/express/lib/router/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3327338">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/addNewProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5396518">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/helloWorldCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36690646">
+          <caret line="12" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.03057554">
           <caret line="10" column="86" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="86" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/nodeService.js">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1166" max-vertical-offset="1734">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/errorCodes/errorCodes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.059859157" vertical-offset="0" max-vertical-offset="568">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/employeesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1088">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/errorCodes/servicesErrorCodes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/SpecRunner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="612">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/spec/sandbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="714">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe">
+    <entry file="file://$PROJECT_DIR$/app/templates/helloWorld.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4813278" vertical-offset="111" max-vertical-offset="1683">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/projectManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21003717">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/projects/apiPostProjectHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55947953">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPutTeamLeaderHandler.js">
+    <entry file="file://$PROJECT_DIR$/server/services/projectsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="782">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.33271375">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ProjectCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09479554">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/dashboardCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34758365">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33266532">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39534885">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiGetTeams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5643154">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/team.js">
+    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/employee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="663">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/services/teamsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2892" max-vertical-offset="3485">
-          <caret line="187" column="35" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.2821577">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/models/serviceModels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="561">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.16459198">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiGetTeamMembers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="850">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.61134166">
+          <caret line="26" column="108" selection-start-line="26" selection-start-column="108" selection-end-line="26" selection-end-column="108" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/models/entitiesModels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42323652">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10650069">
+          <caret line="40" column="54" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamMemberHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54080224">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/nodeService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiDeleteTeamHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/dbmodels/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/teamsManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.826923">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#pre#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/teamsManagementCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51872396" vertical-offset="0" max-vertical-offset="4318">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/services/teamsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#1898#1999#0" expanded="false" />
+            <element signature="e#2160#3671#0" expanded="false" />
+            <element signature="e#2286#3656#0" expanded="false" />
+            <element signature="e#2412#3568#0" expanded="false" />
+            <element signature="e#2494#2557#0" expanded="false" />
+            <element signature="e#2726#3546#0" expanded="false" />
+            <element signature="e#2916#3133#0" expanded="false" />
+            <element signature="e#2965#3115#0" expanded="false" />
+            <element signature="e#3186#3361#0" expanded="false" />
+            <element signature="e#3382#3532#0" expanded="false" />
+            <element signature="e#3572#3649#0" expanded="false" />
+            <element signature="n#!!block;n#updateTeam#0" expanded="false" />
+            <element signature="e#3812#4090#0" expanded="false" />
+            <element signature="e#3831#3989#0" expanded="false" />
+            <element signature="e#4003#4084#0" expanded="false" />
+            <element signature="e#4810#5359#0" expanded="false" />
+            <element signature="e#4865#5355#0" expanded="false" />
+            <element signature="e#4975#5036#0" expanded="false" />
+            <element signature="e#5118#5209#0" expanded="false" />
+            <element signature="e#5226#5347#0" expanded="false" />
+            <element signature="e#5476#6496#0" expanded="false" />
+            <element signature="e#5524#5593#0" expanded="false" />
+            <element signature="e#5597#6494#0" expanded="false" />
+            <element signature="e#5662#6378#0" expanded="false" />
+            <element signature="e#5783#6366#0" expanded="false" />
+            <element signature="e#5821#6156#0" expanded="false" />
+            <element signature="e#6160#6352#0" expanded="false" />
+            <element signature="e#6393#6487#0" expanded="false" />
+            <element signature="e#7408#8422#0" expanded="false" />
+            <element signature="e#7456#7525#0" expanded="false" />
+            <element signature="e#7529#8420#0" expanded="false" />
+            <element signature="e#7594#8304#0" expanded="false" />
+            <element signature="e#7715#8292#0" expanded="false" />
+            <element signature="e#7753#8082#0" expanded="false" />
+            <element signature="e#8086#8278#0" expanded="false" />
+            <element signature="e#8319#8413#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/errorCodes/servicesErrorCodes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPutTeamLeaderHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/handlers/teams/apiPostTeamHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30567083">
+          <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
           <folding />
         </state>
       </provider>
